@@ -1,3 +1,5 @@
+/* Codice scritto inizialmente che prevede l'uso di openSSL */
+
 // const express = require('express')
 // const mongoose = require('mongoose')
 // bodyParser = require('body-parser')
@@ -46,17 +48,24 @@ const express = require('express')
 var app = express()
 const port = process.env.PORT || 3000
 
-Photo = require("./api/models/PhotoModel") 
+Photo = require("./api/models/PhotoModel")
 
-
+const mongoose = require('mongoose');
+const uri = "mongodb+srv://durso_aurelio:MYSNJ6qYumNBaGCp@cluster0.vgxik.mongodb.net/MedicalCenterDb?retryWrites=true&w=majority";
+mongoose.set('useCreateIndex', true) //altrimenti dà warning
+mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 5000
+  }).catch(err => console.log(err.reason));
 
 bodyParser = require('body-parser')
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
  
-var routes = require('./api/routes/appRoutes') //importing route
-routes(app); //register the route
+var routes = require('./api/routes/appRoutes') 
+routes(app)
 
 app.listen(port)
 

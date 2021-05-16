@@ -5,24 +5,45 @@ let mongoose = require('mongoose')
 let Schema = mongoose.Schema
 
 var PhotoSchema = new Schema({
+
     date: {
         type: Date,
         default: Date.now
     },
 
+    status: {
+        type: [{
+            type: String,
+            enum: ['pending', 'fulfilled']
+          }],
+          default: ['pending']
+    },
+
+    moreInfo: {
+        type: String,
+    },
+
     resultName: {
         type: String,
-        required: 'Non è stato indicato il risultato'
+        required: 'Errore. Dati importanti mancanti: risultato dell\'analisi'
     },
 
     resultGravity: {
         type: Number,
-        required: 'Non è stata indicata la gravità'
+        required: 'Errore. Dati importanti mancanti: gravità dell\'analisi'
     },
 
-    photo: {
+    photo: { //da vedere se funziona lol
         type: Buffer,
-        required: 'Non è stata allegata la foto'
+        required: 'Errore. Dati importanti mancanti: foto'
+    },
+
+    phoneNumber: {
+        type: String
+    },
+
+    email: {
+        type: String
     }
 })
 
