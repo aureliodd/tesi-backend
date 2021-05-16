@@ -5,8 +5,6 @@ let Photo = mongoose.model('Photo')
 
 exports.listAllPhotos = function (req, res) {
 
-  console.log('mostro')
-
   Photo.find(function (err, photo) {
     if (err) res.send(err);
     res.json(photo);
@@ -21,7 +19,7 @@ exports.addPhoto = function (req, res) {
   newPhoto.save(function (err, photo) {
     if (err) 
       res.send(err);
-    res.json("aa",photo);
+    res.json(photo);
   })
 }
 
