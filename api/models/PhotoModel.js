@@ -34,7 +34,8 @@ var PhotoSchema = new Schema({
     },
 
     photo: { //da vedere se funziona lol
-        type: Buffer,
+        data: Buffer,
+        contentType: String,
         required: 'Errore. Dati importanti mancanti: foto'
     },
 
