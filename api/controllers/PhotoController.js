@@ -14,15 +14,15 @@ exports.listAllPhotos = function (req, res) {
 exports.addPhoto = function (req, res) {
   console.log(req.body)
 
-  let newPhoto = new Photo(req.body);
+  // let newPhoto = new Photo(req.body);
 
-  newPhoto.save(function (err, photo) {
-    if (err) 
-      res.send(err);
-    res.json({
-      result: 'success'
-    });
-  })
+  // newPhoto.save(function (err, photo) {
+  //   if (err) 
+  //     res.send(err);
+  //   res.json({
+  //     result: 'success'
+  //   });
+  // })
 }
 
 
