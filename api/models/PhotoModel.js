@@ -33,11 +33,11 @@ var PhotoSchema = new Schema({
         required: 'Errore. Dati importanti mancanti: gravità dell\'analisi'
     },
 
-    photo: { //da vedere se funziona lol
-        data: Buffer,
-        contentType: String,
-        required: 'Errore. Dati importanti mancanti: foto'
-    },
+    // photo: { //da vedere se funziona lol
+    //     data: Buffer,
+    //     contentType: String,
+    //     required: 'Errore. Dati importanti mancanti: foto'
+    // },
 
     phoneNumber: {
         type: String
