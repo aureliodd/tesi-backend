@@ -12,7 +12,8 @@ exports.listAllPhotos = function (req, res) {
 }
 
 exports.addPhoto = function (req, res) {
-  console.log(req)
+  console.log(req.body)
+  
 
   // let newPhoto = new Photo(req.body);
 
