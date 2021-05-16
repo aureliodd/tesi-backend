@@ -12,13 +12,14 @@ exports.listAllPhotos = function (req, res) {
 }
 
 exports.addPhoto = function (req, res) {
+  
 
   let newPhoto = new Photo(req.body);
 
   newPhoto.save(function (err, photo) {
     if (err) 
       res.send(err);
-    res.json(photo);
+    res.json("aa",photo);
   })
 }
 
