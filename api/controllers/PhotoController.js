@@ -19,7 +19,9 @@ exports.addPhoto = function (req, res) {
   newPhoto.save(function (err, photo) {
     if (err) 
       res.send(err);
-    res.json(photo);
+    res.json({
+      result: 'success'
+    });
   })
 }
 
