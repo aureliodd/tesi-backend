@@ -42,13 +42,13 @@ exports.deletePhoto = function (req, res) {
     function (err) {
       if (err) { res.send(err); return }
 
-      res.json({ message: 'Foto eliminata correttamente' })
+      res.json({ message: 'ok' })
     })
 }
 
 exports.updatePhoto = function (req, res) {
 
-  if (req.body && req.params.postId) {
+  if (req.body && req.params.photoId) {
     Post.findOneAndUpdate({ _id: req.params.photoId },
       { $set: req.body },
       function (err) {
