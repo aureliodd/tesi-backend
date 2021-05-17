@@ -25,9 +25,7 @@ exports.addPhoto = function (req, res) {
       result: 'success'
     });
   })
-
 }
-
 
 exports.getPhoto = function (req, res) {
   Photo.findOne({ _id: req.params.photoId }, function(err, photo) {
@@ -37,7 +35,6 @@ exports.getPhoto = function (req, res) {
 }
 
 exports.deletePhoto = function (req, res) {
-
   Photo.deleteOne({ _id: req.params.photoId },
     function (err) {
       if (err) { res.send(err); return }
@@ -47,6 +44,9 @@ exports.deletePhoto = function (req, res) {
 }
 
 exports.updatePhoto = function (req, res) {
+
+  console.log('body', req.body)
+  console.log('params', req.params.photoId)
 
   if (req.body && req.params.photoId) {
     Post.findOneAndUpdate({ _id: req.params.photoId },
