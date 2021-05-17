@@ -16,7 +16,6 @@ exports.addPhoto = function (req, res) {
   console.log("params", req.params)
   console.log("body", req.body)
 
-  if (req.params.resultName && req.params.resultGravity) {
     let newPhoto = new Photo(req.body);
 
     newPhoto.save(function (err, photo) {
@@ -26,8 +25,6 @@ exports.addPhoto = function (req, res) {
         result: 'success'
       });
     })
-  } else 
-    res.json({result: 'error'})
 
 }
 
