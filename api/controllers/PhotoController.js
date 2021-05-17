@@ -15,7 +15,6 @@ exports.addPhoto = function (req, res) {
 
   console.log("params", req.params)
   console.log("body", req.body)
-  console.log(req.body._parts)
 
   if (req.params.resultName && req.params.resultGravity) {
     let newPhoto = new Photo(req.body);
