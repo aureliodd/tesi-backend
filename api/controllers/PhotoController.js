@@ -54,7 +54,7 @@ exports.updatePhoto = function (req, res) {
       function (err) {
         if (err)
           res.send(err)
-        res.json({ message: 'stato modificato a fullfilled' })
+        res.json({ message: 'fullfilled' })
       })
   } else
     res.json({ message: "please insert data" })
