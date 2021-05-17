@@ -51,10 +51,10 @@ exports.updatePhoto = function (req, res) {
   if (req.body && req.params.photoId) {
     Photo.findOneAndUpdate({ _id: req.params.photoId },
       { $set: req.body },
-      function (err) {
+      function (err, photo) {
         if (err)
           res.send(err)
-        res.json({ message: 'fullfilled' })
+        res.json(photo)
       })
   } else
     res.json({ message: "please insert data" })
