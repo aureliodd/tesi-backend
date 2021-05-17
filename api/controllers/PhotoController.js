@@ -26,9 +26,8 @@ exports.addPhoto = function (req, res) {
         result: 'success'
       });
     })
-  }
-
-  req.json({result: 'error'})
+  } else 
+    res.json({result: 'error'})
 
 }
 
