@@ -11,5 +11,6 @@ module.exports = function(app) {
     app.route('/photos/:photoId')
         .get(photos.getPhoto)
         .delete(photos.deletePhoto)
+        .patch(posts.updatePhoto)
 
 }
