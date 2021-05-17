@@ -49,7 +49,7 @@ exports.updatePhoto = function (req, res) {
   console.log('params', req.params.photoId)
 
   if (req.body && req.params.photoId) {
-    Post.findOneAndUpdate({ _id: req.params.photoId },
+    Photo.findOneAndUpdate({ _id: req.params.photoId },
       { $set: req.body },
       function (err) {
         if (err)
