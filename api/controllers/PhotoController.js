@@ -12,20 +12,24 @@ exports.listAllPhotos = function (req, res) {
 }
 
 exports.addPhoto = function (req, res) {
-  
-  console.log("params",req.params)
-  console.log("body",req.body)
-  
 
-  let newPhoto = new Photo(req.body);
+  console.log("params", req.params)
+  console.log("body", req.body)
 
-  newPhoto.save(function (err, photo) {
-    if (err) 
-      res.send(err);
-    res.json({
-      result: 'success'
-    });
-  })
+  if (req.params.resultName && req.params.resultGravity) {
+    let newPhoto = new Photo(req.body);
+
+    newPhoto.save(function (err, photo) {
+      if (err)
+        res.send(err);
+      res.json({
+        result: 'success'
+      });
+    })
+  }
+
+  req.json({result: 'error'})
+
 }
 
 
